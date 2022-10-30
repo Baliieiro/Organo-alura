@@ -3,17 +3,18 @@ import Colaborador from "../Colaborador";
 import "./Time.css";
 
 const Time = (props) => {
-  const corDeFundo = { backgroundColor: props.corSecundaria };
-  const corDaBorda = { borderColor: props.corPrimaria };
+  const css = { backgroundColor: props.corSecundaria };
 
   return (
     props.colaboradores.length > 0 && (
-      <section className="time" style={corDeFundo}>
-        <h3 style={corDaBorda}>{props.nomeTime}</h3>
+      <section className="time" style={css}>
+        <h3 style={{ borderColor: props.corPrimaria }}>{props.nomeTime}</h3>
         <div className="colaboradores">
           {/* quando for passar no map precisa usar o msm nome que esta na variavel entre parentes */}
           {props.colaboradores.map((colaborador) => (
             <Colaborador
+              corDeFundo={props.corPrimaria}
+              key={colaborador.nome}
               nome={colaborador.nome}
               cargo={colaborador.cargo}
               imagem={colaborador.imagem}

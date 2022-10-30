@@ -11,9 +11,10 @@ const ListaSuspensa = (props) => {
       <label>{props.label}</label>
       <select
         required={props.obrigatorio}
-        value={props.valor}
+        value={props.value}
         onChange={aoSelecionar}
       >
+        <option value=""></option>
         {/* para cada item sua (key= o nome do item) e o valor da option será o nome do item*/}
 
         {/* para fazer uma function sem o return apenas escreva sem colocar o {} escopo */}
